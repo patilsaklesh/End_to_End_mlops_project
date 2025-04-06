@@ -40,6 +40,9 @@ def configure_logger():
     logger.addHandler(file_handler)
     logger.addHandler(console_handler)
 
+    # to ignore the debug messages from mongodb
+    logging.getLogger("pymongo").setLevel(logging.WARNING)
+
 # configure the logger
 configure_logger()
 
